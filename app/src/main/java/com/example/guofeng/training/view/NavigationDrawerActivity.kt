@@ -1,13 +1,15 @@
 package com.example.guofeng.training.view
 
 import android.os.Bundle
-import android.support.design.widget.Snackbar
 import android.support.design.widget.NavigationView
+import android.support.design.widget.Snackbar
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import android.widget.Toast
 import com.example.guofeng.training.R
 import kotlinx.android.synthetic.main.activity_navigation_drawer.*
 import kotlinx.android.synthetic.main.app_bar_navigation_drawer.*
@@ -19,13 +21,23 @@ class NavigationDrawerActivity : AppCompatActivity(), NavigationView.OnNavigatio
         setContentView(R.layout.activity_navigation_drawer)
         setSupportActionBar(toolbar)
 
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+        fab.setOnClickListener {
+            Snackbar.make(it, "Replace with your own action", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show()
         }
 
-        val toggle = ActionBarDrawerToggle(
-                this, drawer_layout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
+        val toggle = object : ActionBarDrawerToggle(this, drawer_layout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close) {
+
+            override fun onDrawerClosed(drawerView: View?) {
+                super.onDrawerClosed(drawerView)
+                Toast.makeText(this@NavigationDrawerActivity, R.string.navigation_drawer_close, Toast.LENGTH_SHORT).show()
+            }
+
+            override fun onDrawerOpened(drawerView: View?) {
+                super.onDrawerOpened(drawerView)
+                Toast.makeText(this@NavigationDrawerActivity, R.string.navigation_drawer_open, Toast.LENGTH_SHORT).show()
+            }
+        }
         drawer_layout.addDrawerListener(toggle)
         toggle.syncState()
 
