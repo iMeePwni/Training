@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
 
         recycler_view.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         recycler_view.addItemDecoration(DividerItemDecoration(this, LinearLayoutManager.VERTICAL))
-        recycler_view.adapter = Adapter(IntentFactory.creatIntents(this))
+        recycler_view.adapter = Adapter(IntentFactory.createIntents(this))
     }
 
     private class ViewHolder(val binding: ItemViewHolderBinding) : RecyclerView.ViewHolder(binding.root) {
