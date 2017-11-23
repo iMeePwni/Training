@@ -21,10 +21,32 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
+            android:onClick="@{viewModel::createNotification}"
             android:text="@string/create_notification"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:onClick="@{viewModel::onButtonClick}"/>
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/update_notification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:onClick="@{viewModel::updateNotification}"
+            android:text="@string/update_notification"
+            app:layout_constraintStart_toEndOf="@+id/create_notification"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/cancel_notification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:onClick="@{viewModel::cancelNotification}"
+            android:text="@string/cancel_notification"
+            app:layout_constraintStart_toEndOf="@+id/update_notification"
+            app:layout_constraintTop_toTopOf="parent" />
     </android.support.constraint.ConstraintLayout>
 </layout>
 
