@@ -1,6 +1,7 @@
 package com.example.guofeng.training.view
 
 import android.os.Bundle
+import android.support.v4.app.NavUtils
 import android.support.v7.app.AppCompatActivity
 import com.example.guofeng.training.R
 import kotlinx.android.synthetic.main.activity_bottom_navigation.*
@@ -10,6 +11,14 @@ class BottomNavigationActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_bottom_navigation)
+        setSupportActionBar(toolbar)
+
+        toolbar.setNavigationIcon(R.mipmap.ic_launcher)
+        toolbar.setNavigationOnClickListener {
+            val intent = NavUtils.getParentActivityIntent(this)
+            // 只是导航到而不是新开一个Activity
+            NavUtils.navigateUpTo(this, intent)
+        }
 
         navigation.setOnNavigationItemSelectedListener {
             when (it.itemId) {

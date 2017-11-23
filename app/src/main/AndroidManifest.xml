@@ -24,7 +24,9 @@
             android:label="@string/title_activity_net_work_operation" />
         <activity
             android:name=".view.BottomNavigationActivity"
-            android:label="@string/title_activity_bottom_navigation" />
+            android:label="@string/title_activity_bottom_navigation"
+            android:parentActivityName=".view.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".view.TabbedActivity"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -32,6 +34,11 @@
             android:name=".view.NavigationDrawerActivity"
             android:label="@string/title_activity_navigation_drawer"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".view.NotificationActivity" />
+        <activity
+            android:name=".view.ScrollingActivity"
+            android:label="@string/title_activity_scrolling"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
