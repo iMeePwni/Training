@@ -16,7 +16,8 @@ object IntentFactory {
                 Intent(context, TabbedActivity::class.java),
                 Intent(context, NavigationDrawerActivity::class.java),
                 Intent(context, NotificationActivity::class.java),
-                Intent(context, ScrollingActivity::class.java)
+                Intent(context, ScrollingActivity::class.java),
+                Intent(context, LoginActivity::class.java)
         )
     }
 }

@@ -47,4 +47,13 @@ class NotificationViewModel : BaseObservable() {
     fun cancelNotification(view: View) {
         notificationManager.cancel(R.id.notification_channel_id)
     }
+
+    private val bigViewBuilder = NotificationCompat.Builder(context, NotificationManagerCompat.IMPORTANCE_MAX.toString())
+            .setSmallIcon(R.mipmap.ic_launcher_round)
+            .setContentText("Hello World")
+            .setStyle(NotificationCompat.BigTextStyle().bigText("This  is big text"))
+
+    fun createBigViewNotification(view: View) {
+        notificationManager.notify(R.id.notification_big_view_channel_id, bigViewBuilder.build())
+    }
 }

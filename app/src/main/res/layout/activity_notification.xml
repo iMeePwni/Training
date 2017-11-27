@@ -47,6 +47,17 @@
             android:text="@string/cancel_notification"
             app:layout_constraintStart_toEndOf="@+id/update_notification"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/big_view_notification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:onClick="@{viewModel::createBigViewNotification}"
+            android:text="@string/big_view"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/create_notification" />
     </android.support.constraint.ConstraintLayout>
 </layout>
 
