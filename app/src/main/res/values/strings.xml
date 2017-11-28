@@ -107,6 +107,7 @@
     <string name="cancel_notification">取消通知</string>
     <string name="big_view">BigView通知</string>
     <string name="title_activity_login">Sign in</string>
+    <string name="progress_bar_notification">指示器通知</string>
 
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
@@ -120,4 +121,6 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+    <string name="picture_download">Picture Download</string>
+    <string name="download_complete">Download Complete</string>
 </resources>

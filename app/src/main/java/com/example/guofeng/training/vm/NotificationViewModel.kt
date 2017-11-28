@@ -11,6 +11,9 @@ import android.view.View
 import com.example.guofeng.training.R
 import com.example.guofeng.training.app.App
 import com.example.guofeng.training.view.MainActivity
+import io.reactivex.Observable
+import io.reactivex.schedulers.Schedulers
+import java.util.concurrent.TimeUnit
 
 @Suppress("UNUSED_PARAMETER")
 /**
@@ -49,11 +52,30 @@ class NotificationViewModel : BaseObservable() {
     }
 
     private val bigViewBuilder = NotificationCompat.Builder(context, NotificationManagerCompat.IMPORTANCE_MAX.toString())
+            .setDefaults(NotificationCompat.DEFAULT_ALL)
             .setSmallIcon(R.mipmap.ic_launcher_round)
             .setContentText("Hello World")
             .setStyle(NotificationCompat.BigTextStyle().bigText("This  is big text"))
 
     fun createBigViewNotification(view: View) {
         notificationManager.notify(R.id.notification_big_view_channel_id, bigViewBuilder.build())
+    }
+
+    fun createProgressNotification(view: View) {
+        val progressNotificationBuilder = NotificationCompat.Builder(context, NotificationManagerCompat.IMPORTANCE_HIGH.toString())
+                .setDefaults(NotificationCompat.DEFAULT_ALL)
+                .setSmallIcon(R.mipmap.ic_launcher)
+                .setContentTitle(context.getString(R.string.picture_download))
+        Observable.intervalRange(0, 1 + 100, 0, 1, TimeUnit.SECONDS, Schedulers.computation()
+        ).observeOn(Schedulers.newThread()
+        ).subscribe {
+            val int = it.toInt()
+            progressNotificationBuilder.setProgress(100, int, false)
+            if (int >= 100) {
+                progressNotificationBuilder.setContentTitle(context.getString(R.string.download_complete))
+            }
+            notificationManager.notify(R.id.notification_progress_view_channel_id, progressNotificationBuilder.build())
+        }
+
     }
 }
