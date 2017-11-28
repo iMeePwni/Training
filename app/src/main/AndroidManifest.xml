@@ -59,6 +59,28 @@
             android:name=".view.SearchResultActivity"
             android:label="@string/title_activity_search_result"
             android:launchMode="singleTop" />
+        <activity
+            android:name=".view.DeepLinkingActivity"
+            android:label="@string/deep_linking">
+            <!-- am: Activity Manager-->
+            <!-- am start -W -a android.intent.action.VIEW -d "http://www.example.com"-->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!-- 接受"http://www.example.com"开头的URIs -->
+                <data
+                    android:host="www.example.com"
+                    android:scheme="http" />
+                <!-- 接受以"example://training/deep" -->
+                <data
+                    android:host="training"
+                    android:pathPrefix="/deep"
+                    android:scheme="example" />
+
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
