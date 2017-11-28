@@ -1,4 +1,4 @@
-package com.example.guofeng.training.view
+package com.example.guofeng.training.view.ui
 
 import android.os.Bundle
 import android.support.v4.app.NavUtils

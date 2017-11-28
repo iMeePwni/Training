@@ -1,8 +1,7 @@
-package com.example.guofeng.training.view
+package com.example.guofeng.training.view.ui
 
 import android.app.SearchManager
 import android.content.Context
-import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v4.app.Fragment

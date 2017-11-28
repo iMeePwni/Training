@@ -1,4 +1,4 @@
-package com.example.guofeng.training.view
+package com.example.guofeng.training.view.ui
 
 import android.content.Intent
 import android.databinding.DataBindingUtil

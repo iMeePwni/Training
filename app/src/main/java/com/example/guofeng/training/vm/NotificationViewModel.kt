@@ -10,7 +10,7 @@ import android.support.v4.app.NotificationManagerCompat
 import android.view.View
 import com.example.guofeng.training.R
 import com.example.guofeng.training.app.App
-import com.example.guofeng.training.view.MainActivity
+import com.example.guofeng.training.view.ui.MainActivity
 import io.reactivex.Observable
 import io.reactivex.schedulers.Schedulers
 import java.util.concurrent.TimeUnit

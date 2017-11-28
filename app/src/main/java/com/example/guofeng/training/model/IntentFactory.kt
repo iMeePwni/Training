@@ -2,7 +2,7 @@ package com.example.guofeng.training.model
 
 import android.content.Context
 import android.content.Intent
-import com.example.guofeng.training.view.*
+import com.example.guofeng.training.view.ui.*
 
 /**
  * Created by guofeng on 2017/11/21.

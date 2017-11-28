@@ -5,7 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.guofeng.training.view.NavigationDrawerActivity"
+    tools:context="com.example.guofeng.training.view.ui.NavigationDrawerActivity"
     tools:showIn="@layout/app_bar_navigation_drawer">
 
+    <com.example.guofeng.training.view.view.CustomView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:src="@mipmap/ic_launcher"
+        app:text="@string/title_activity_navigation_drawer" />
 </android.support.constraint.ConstraintLayout>
