@@ -35,7 +35,11 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".view.TabbedActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+        </activity>
         <activity
             android:name=".view.NavigationDrawerActivity"
             android:label="@string/title_activity_navigation_drawer"
@@ -50,7 +54,11 @@
         <activity android:name=".view.KeyBoardActivity" />
         <activity
             android:name=".view.LoginActivity"
-            android:label="@string/title_activity_login"></activity>
+            android:label="@string/title_activity_login" />
+        <activity
+            android:name=".view.SearchResultActivity"
+            android:label="@string/title_activity_search_result"
+            android:launchMode="singleTop" />
     </application>
 
 </manifest>

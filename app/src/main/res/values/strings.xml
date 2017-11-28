@@ -3,6 +3,7 @@
     <string name="title_activity_net_work_operation">NetWorkOperationActivity</string>
     <string name="title_activity_bottom_navigation">BottomNavigationActivity</string>
     <string name="title_activity_tabbed">TabbedActivity</string>
+    <string name="title_activity_search_result">SearchResultActivity</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
@@ -123,4 +124,6 @@
     </string>
     <string name="picture_download">Picture Download</string>
     <string name="download_complete">Download Complete</string>
+    <string name="search">搜索</string>
+    <string name="everything_you_want_to_search">你想要的一切</string>
 </resources>

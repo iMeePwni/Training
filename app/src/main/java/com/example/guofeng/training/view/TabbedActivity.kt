@@ -1,11 +1,15 @@
 package com.example.guofeng.training.view
 
+import android.app.SearchManager
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentPagerAdapter
 import android.support.v7.app.AppCompatActivity
 import android.view.*
+import android.widget.SearchView
 import android.widget.Toast
 import com.example.guofeng.training.R
 import kotlinx.android.synthetic.main.activity_tabbed.*
@@ -53,6 +57,18 @@ class TabbedActivity : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.menu_tabbed, menu)
+        val searchManager = getSystemService(Context.SEARCH_SERVICE) as SearchManager
+        val searchView = menu.findItem(R.id.search).actionView as SearchView
+        searchView.setSearchableInfo(searchManager.getSearchableInfo(componentName))
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
+            override fun onQueryTextSubmit(query: String): Boolean {
+                SearchResultActivity.startActivity(this@TabbedActivity, query)
+                return true
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean = false
+
+        })
         return true
     }
 
