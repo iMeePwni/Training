@@ -1,9 +1,13 @@
 package com.example.guofeng.training.vm
 
+import android.app.Activity
+import android.app.ActivityOptions
 import android.content.Intent
 import android.databinding.BaseObservable
 import android.databinding.Bindable
+import android.util.Pair
 import android.view.View
+import com.example.guofeng.training.R
 
 /**
  * Created by guofeng on 2017/11/21.
@@ -17,6 +21,7 @@ class ItemViewModel(private var intent: Intent) : BaseObservable() {
     }
 
     fun onItemClick(view: View) {
-        view.context.startActivity(intent)
+        val activity = view.context as Activity
+        activity.startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(activity, Pair(view, activity.getString(R.string.transition_name))).toBundle())
     }
 }

@@ -17,6 +17,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:src="@mipmap/ic_launcher"
+        android:transitionName="@string/transition_name"
         app:text="@string/title_activity_navigation_drawer" />
 
     <Button

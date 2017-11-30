@@ -133,4 +133,5 @@
     <string name="immersive">非粘性沉浸模式</string>
     <string name="immersive_sticky">粘性沉浸</string>
     <string name="hide_status_bar">隐藏状态栏</string>
+    <string name="transition_name">transitionName</string>
 </resources>
