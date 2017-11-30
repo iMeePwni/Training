@@ -13,6 +13,7 @@ import android.widget.Toast
 import com.example.guofeng.training.R
 import kotlinx.android.synthetic.main.activity_navigation_drawer.*
 import kotlinx.android.synthetic.main.app_bar_navigation_drawer.*
+import kotlinx.android.synthetic.main.content_navigation_drawer.*
 
 class NavigationDrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -42,6 +43,35 @@ class NavigationDrawerActivity : AppCompatActivity(), NavigationView.OnNavigatio
         toggle.syncState()
 
         nav_view.setNavigationItemSelectedListener(this)
+
+        val decorView = window.decorView
+        // decorView 通常来说控制导航的可见性
+        decorView.setOnSystemUiVisibilityChangeListener {
+            Toast.makeText(this, it.toString(), Toast.LENGTH_SHORT).show()
+        }
+        fade_out_status.setOnClickListener{
+            decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LOW_PROFILE
+        }
+
+        hide_navigation_bar.setOnClickListener {
+            decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+        }
+
+        clear_visibility_label.setOnClickListener{
+            decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_VISIBLE
+        }
+
+        immersive.setOnClickListener {
+            decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_IMMERSIVE
+        }
+
+        immersive_sticky.setOnClickListener {
+            decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+        }
+
+        hide_status_bar.setOnClickListener {
+            decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+        }
     }
 
     override fun onBackPressed() {

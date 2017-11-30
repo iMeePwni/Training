@@ -127,4 +127,10 @@
     <string name="search">搜索</string>
     <string name="everything_you_want_to_search">你想要的一切</string>
     <string name="deep_linking">DeepLinkingActivity</string>
+    <string name="fade_out_status">淡化状态栏和系统栏</string>
+    <string name="clear_visibility_label">清除显示标签</string>
+    <string name="hide_navigation_bar">隐藏导航栏</string>
+    <string name="immersive">非粘性沉浸模式</string>
+    <string name="immersive_sticky">粘性沉浸</string>
+    <string name="hide_status_bar">隐藏状态栏</string>
 </resources>

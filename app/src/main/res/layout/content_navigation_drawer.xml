@@ -9,6 +9,7 @@
     tools:showIn="@layout/app_bar_navigation_drawer">
 
     <com.example.guofeng.training.view.view.CustomView
+        android:id="@+id/customView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -17,4 +18,65 @@
         app:layout_constraintTop_toTopOf="parent"
         app:src="@mipmap/ic_launcher"
         app:text="@string/title_activity_navigation_drawer" />
+
+    <Button
+        android:id="@+id/fade_out_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/fade_out_status"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/customView" />
+
+    <Button
+        android:id="@+id/clear_visibility_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/clear_visibility_label"
+        app:layout_constraintStart_toEndOf="@+id/hide_navigation_bar"
+        app:layout_constraintTop_toBottomOf="@+id/customView" />
+
+    <Button
+        android:id="@+id/hide_navigation_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/hide_navigation_bar"
+        app:layout_constraintStart_toEndOf="@+id/fade_out_status"
+        app:layout_constraintTop_toBottomOf="@+id/customView" />
+
+    <Button
+        android:id="@+id/immersive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/immersive"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fade_out_status" />
+
+    <Button
+        android:id="@+id/immersive_sticky"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/immersive_sticky"
+        app:layout_constraintStart_toEndOf="@+id/immersive"
+        app:layout_constraintTop_toBottomOf="@+id/hide_navigation_bar" />
+
+    <Button
+        android:id="@+id/hide_status_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/hide_status_bar"
+        app:layout_constraintStart_toEndOf="@+id/immersive_sticky"
+        app:layout_constraintTop_toBottomOf="@+id/clear_visibility_label" />
+
 </android.support.constraint.ConstraintLayout>
