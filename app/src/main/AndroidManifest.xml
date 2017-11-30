@@ -62,8 +62,9 @@
         <activity
             android:name=".view.ui.DeepLinkingActivity"
             android:label="@string/deep_linking">
-            <!-- am: Activity Manager-->
-            <!-- am start -W -a android.intent.action.VIEW -d "http://www.example.com"-->
+
+            <!-- am: Activity Manager -->
+            <!-- am start -W -a android.intent.action.VIEW -d "http://www.example.com" -->
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -78,9 +79,12 @@
                     android:host="training"
                     android:pathPrefix="/deep"
                     android:scheme="example" />
-
             </intent-filter>
         </activity>
+        <activity
+            android:name=".view.ui.BasicActivity"
+            android:label="@string/title_activity_basic"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
