@@ -1,6 +1,8 @@
 package com.example.guofeng.training.app
 
 import android.app.Application
+import com.squareup.leakcanary.LeakCanary
+import com.squareup.leakcanary.RefWatcher
 import kotlin.properties.Delegates
 
 /**
@@ -11,9 +13,18 @@ class App : Application() {
     override fun onCreate() {
         super.onCreate()
         instance = this
+
+        initLeakCanary()
+    }
+
+    private fun initLeakCanary() {
+        if (!LeakCanary.isInAnalyzerProcess(this)) {
+            refWatcher = LeakCanary.install(this)
+        }
     }
 
     companion object {
         var instance by Delegates.notNull<Application>()
+        var refWatcher: RefWatcher? = null
     }
 }
