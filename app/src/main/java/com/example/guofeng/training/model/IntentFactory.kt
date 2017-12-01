@@ -18,7 +18,8 @@ object IntentFactory {
                 Intent(context, NotificationActivity::class.java),
                 Intent(context, ScrollingActivity::class.java),
                 Intent(context, LoginActivity::class.java),
-                Intent(context, BasicActivity::class.java)
+                Intent(context, BasicActivity::class.java),
+                Intent(context, LeakCanaryActivity::class.java)
         )
     }
 }

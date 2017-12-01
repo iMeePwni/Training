@@ -1,7 +1,7 @@
 package com.example.guofeng.training.app
 
+import android.app.Activity
 import android.app.Application
-import android.support.v7.app.AppCompatActivity
 import com.squareup.leakcanary.LeakCanary
 import com.squareup.leakcanary.RefWatcher
 import kotlin.properties.Delegates
@@ -27,6 +27,7 @@ class App : Application() {
     companion object {
         var instance by Delegates.notNull<Application>()
         var refWatcher: RefWatcher? = null
+        var leakedActivity: Activity? = null
     }
 
 }
