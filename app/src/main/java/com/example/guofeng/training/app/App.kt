@@ -2,6 +2,9 @@ package com.example.guofeng.training.app
 
 import android.app.Activity
 import android.app.Application
+import com.example.guofeng.training.BuildConfig
+import com.example.guofeng.training.model.service.LeakService
+import com.squareup.leakcanary.AndroidExcludedRefs
 import com.squareup.leakcanary.LeakCanary
 import com.squareup.leakcanary.RefWatcher
 import kotlin.properties.Delegates
@@ -20,8 +23,20 @@ class App : Application() {
 
     private fun initLeakCanary() {
         if (!LeakCanary.isInAnalyzerProcess(this)) {
-            refWatcher = LeakCanary.install(this)
+            refWatcher = getRefWatcher()
         }
+    }
+
+    private fun getRefWatcher(): RefWatcher? {
+        return if (BuildConfig.DEBUG) {
+            LeakCanary.refWatcher(this)
+                    .listenerServiceClass(LeakService::class.java)
+                    .excludedRefs(AndroidExcludedRefs.createAppDefaults().build())
+                    .buildAndInstall()
+        } else {
+            RefWatcher.DISABLED
+        }
+
     }
 
     companion object {

@@ -86,6 +86,8 @@
             android:label="@string/title_activity_basic"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".view.ui.LeakCanaryActivity" />
+
+        <service android:name=".model.service.LeakService" />
     </application>
 
 </manifest>
