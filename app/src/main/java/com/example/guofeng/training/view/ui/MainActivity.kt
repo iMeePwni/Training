@@ -3,19 +3,19 @@ package com.example.guofeng.training.view.ui
 import android.content.Intent
 import android.databinding.DataBindingUtil
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.example.guofeng.training.R
+import com.example.guofeng.training.app.BaseActivity
 import com.example.guofeng.training.databinding.ItemViewHolderBinding
 import com.example.guofeng.training.model.IntentFactory
 import com.example.guofeng.training.vm.ItemViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

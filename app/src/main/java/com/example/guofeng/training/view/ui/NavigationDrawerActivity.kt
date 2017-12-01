@@ -5,17 +5,17 @@ import android.support.design.widget.NavigationView
 import android.support.design.widget.Snackbar
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
-import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import com.example.guofeng.training.R
+import com.example.guofeng.training.app.BaseActivity
 import kotlinx.android.synthetic.main.activity_navigation_drawer.*
 import kotlinx.android.synthetic.main.app_bar_navigation_drawer.*
 import kotlinx.android.synthetic.main.content_navigation_drawer.*
 
-class NavigationDrawerActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+class NavigationDrawerActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,7 +49,7 @@ class NavigationDrawerActivity : AppCompatActivity(), NavigationView.OnNavigatio
         decorView.setOnSystemUiVisibilityChangeListener {
             Toast.makeText(this, it.toString(), Toast.LENGTH_SHORT).show()
         }
-        fade_out_status.setOnClickListener{
+        fade_out_status.setOnClickListener {
             decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LOW_PROFILE
         }
 
@@ -57,7 +57,7 @@ class NavigationDrawerActivity : AppCompatActivity(), NavigationView.OnNavigatio
             decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
         }
 
-        clear_visibility_label.setOnClickListener{
+        clear_visibility_label.setOnClickListener {
             decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_VISIBLE
         }
 

@@ -2,7 +2,6 @@ package com.example.guofeng.training.view.ui
 
 import android.os.Bundle
 import android.support.design.widget.Snackbar
-import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
@@ -11,16 +10,18 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import com.example.guofeng.training.R
+import com.example.guofeng.training.app.BaseActivity
 import io.reactivex.Observable
 import kotlinx.android.synthetic.main.activity_basic.*
 import kotlinx.android.synthetic.main.content_basic.*
 import java.util.*
 import kotlin.properties.Delegates
 
-class BasicActivity : AppCompatActivity() {
+class BasicActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_basic)
         setSupportActionBar(toolbar)
 

@@ -2,11 +2,11 @@ package com.example.guofeng.training.view.ui
 
 import android.os.Bundle
 import android.support.v4.app.NavUtils
-import android.support.v7.app.AppCompatActivity
 import com.example.guofeng.training.R
+import com.example.guofeng.training.app.BaseActivity
 import kotlinx.android.synthetic.main.activity_bottom_navigation.*
 
-class BottomNavigationActivity : AppCompatActivity() {
+class BottomNavigationActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -6,15 +6,15 @@ import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentPagerAdapter
-import android.support.v7.app.AppCompatActivity
 import android.view.*
 import android.widget.SearchView
 import android.widget.Toast
 import com.example.guofeng.training.R
+import com.example.guofeng.training.app.BaseActivity
 import kotlinx.android.synthetic.main.activity_tabbed.*
 import kotlinx.android.synthetic.main.fragment_tabbed.view.*
 
-class TabbedActivity : AppCompatActivity() {
+class TabbedActivity : BaseActivity() {
 
     /**
      * The [android.support.v4.view.PagerAdapter] that will provide
@@ -59,7 +59,7 @@ class TabbedActivity : AppCompatActivity() {
         val searchManager = getSystemService(Context.SEARCH_SERVICE) as SearchManager
         val searchView = menu.findItem(R.id.search).actionView as SearchView
         searchView.setSearchableInfo(searchManager.getSearchableInfo(componentName))
-        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String): Boolean {
                 SearchResultActivity.startActivity(this@TabbedActivity, query)
                 return true

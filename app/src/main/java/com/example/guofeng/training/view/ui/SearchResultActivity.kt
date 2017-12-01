@@ -3,13 +3,13 @@ package com.example.guofeng.training.view.ui
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import com.example.guofeng.training.R
+import com.example.guofeng.training.app.BaseActivity
 import com.example.guofeng.training.model.data.DictionaryItem
 import com.example.guofeng.training.model.db.DatabaseOpenHelper
 
-class SearchResultActivity : AppCompatActivity() {
+class SearchResultActivity : BaseActivity() {
 
     private val db by lazy {
         DatabaseOpenHelper(this)

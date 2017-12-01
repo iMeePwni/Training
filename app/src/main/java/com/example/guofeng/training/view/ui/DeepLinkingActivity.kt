@@ -1,11 +1,11 @@
 package com.example.guofeng.training.view.ui
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import com.example.guofeng.training.R
+import com.example.guofeng.training.app.BaseActivity
 import kotlinx.android.synthetic.main.activity_deep_linking.*
 
-class DeepLinkingActivity : AppCompatActivity() {
+class DeepLinkingActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
