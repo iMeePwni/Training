@@ -19,7 +19,8 @@ object IntentFactory {
                 Intent(context, ScrollingActivity::class.java),
                 Intent(context, LoginActivity::class.java),
                 Intent(context, BasicActivity::class.java),
-                Intent(context, LeakCanaryActivity::class.java)
+                Intent(context, LeakCanaryActivity::class.java),
+                Intent(context, CardViewActivity::class.java)
         )
     }
 }

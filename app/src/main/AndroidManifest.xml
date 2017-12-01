@@ -88,6 +88,8 @@
         <activity android:name=".view.ui.LeakCanaryActivity" />
 
         <service android:name=".model.service.LeakService" />
+
+        <activity android:name=".view.ui.CardViewActivity"></activity>
     </application>
 
 </manifest>
