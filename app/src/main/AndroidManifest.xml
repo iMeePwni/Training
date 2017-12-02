@@ -91,7 +91,10 @@
 
         <activity android:name=".view.ui.CardViewActivity" />
         <activity android:name=".view.ui.PaletteActivity" />
-        <activity android:name=".view.ui.AnimatorActivity"></activity>
+        <activity android:name=".view.ui.AnimatorActivity" />
+        <activity
+            android:name=".view.ui.EditTextActivity"
+            android:windowSoftInputMode="adjustResize|stateVisible" />
     </application>
 
 </manifest>
