@@ -21,7 +21,8 @@ object IntentFactory {
                 Intent(context, BasicActivity::class.java),
                 Intent(context, LeakCanaryActivity::class.java),
                 Intent(context, CardViewActivity::class.java),
-                Intent(context, PaletteActivity::class.java)
+                Intent(context, PaletteActivity::class.java),
+                Intent(context, AnimatorActivity::class.java)
         )
     }
 }

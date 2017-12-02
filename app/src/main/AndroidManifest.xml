@@ -90,7 +90,8 @@
         <service android:name=".model.service.LeakService" />
 
         <activity android:name=".view.ui.CardViewActivity" />
-        <activity android:name=".view.ui.PaletteActivity"></activity>
+        <activity android:name=".view.ui.PaletteActivity" />
+        <activity android:name=".view.ui.AnimatorActivity"></activity>
     </application>
 
 </manifest>
