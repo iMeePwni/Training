@@ -23,7 +23,8 @@ object IntentFactory {
                 Intent(context, CardViewActivity::class.java),
                 Intent(context, PaletteActivity::class.java),
                 Intent(context, AnimatorActivity::class.java),
-                Intent(context, EditTextActivity::class.java)
+                Intent(context, EditTextActivity::class.java),
+                Intent(context, IntentServiceActivity::class.java)
         )
     }
 }

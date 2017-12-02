@@ -61,7 +61,7 @@ class NotificationViewModel : BaseObservable() {
         notificationManager.notify(R.id.notification_big_view_channel_id, bigViewBuilder.build())
     }
 
-    fun createProgressNotification(view: View) {
+    fun createProgressNotification(view: View?) {
         val progressNotificationBuilder = NotificationCompat.Builder(context, NotificationManagerCompat.IMPORTANCE_HIGH.toString())
                 .setDefaults(NotificationCompat.DEFAULT_ALL)
                 .setSmallIcon(R.mipmap.ic_launcher)

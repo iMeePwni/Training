@@ -95,6 +95,11 @@
         <activity
             android:name=".view.ui.EditTextActivity"
             android:windowSoftInputMode="adjustResize|stateVisible" />
+        <activity android:name=".view.ui.IntentServiceActivity" />
+
+        <service
+            android:name=".model.service.BroadcastIntentService"
+            android:exported="false"></service>
     </application>
 
 </manifest>
