@@ -7,6 +7,10 @@ import android.support.v7.app.AppCompatActivity
  */
 open class BaseActivity : AppCompatActivity() {
 
+    protected val tag : String by lazy {
+        javaClass.simpleName
+    }
+
     override fun onDestroy() {
         super.onDestroy()
         App.refWatcher?.watch(this)
