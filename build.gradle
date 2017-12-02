@@ -8,8 +8,8 @@ buildscript {
         leakcanary_version = '1.5.4'
     }
     repositories {
-        google()
         jcenter()
+        google()
     }
     dependencies {
         classpath "com.android.tools.build:gradle:$android_plugin_version"
@@ -22,8 +22,8 @@ buildscript {
 
 allprojects {
     repositories {
-        google()
         jcenter()
+        google()
     }
 }
 
