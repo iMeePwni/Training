@@ -7,6 +7,7 @@ import android.support.v4.app.LoaderManager
 import android.support.v4.content.CursorLoader
 import android.support.v4.content.Loader
 import android.util.Log
+import android.view.WindowManager
 import com.example.guofeng.training.R
 import com.example.guofeng.training.app.BaseActivity
 
@@ -33,6 +34,9 @@ class CursorLoaderActivity : BaseActivity(), LoaderManager.LoaderCallbacks<Curso
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cursor_loader)
 
+        // 屏幕常亮Flag 最好在代码中实现 动态添加和取消
+//        window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
+//        window.clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
         supportLoaderManager.initLoader(R.id.loader_local_cursor, null, this)
     }
 
