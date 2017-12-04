@@ -1,8 +1,10 @@
 package com.example.guofeng.training.view.ui
 
 import android.content.BroadcastReceiver
+import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.support.v4.content.LocalBroadcastManager
 import android.view.View
@@ -40,10 +42,24 @@ class IntentServiceActivity : BaseActivity() {
         startService(Intent(this, BroadcastIntentService::class.java))
     }
 
+    private fun setReceiverEnabled() {
+        packageManager.setComponentEnabledSetting(ComponentName(this, ResponseReceiver::class.java),
+                PackageManager.COMPONENT_ENABLED_STATE_ENABLED,
+                PackageManager.DONT_KILL_APP)
+    }
+
+    private fun setReceiverDisabled() {
+        packageManager.setComponentEnabledSetting(ComponentName(this, ResponseReceiver::class.java),
+                PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
+                PackageManager.DONT_KILL_APP)
+    }
+
+    // 在Manifest中将enable属性设置为false,意味着除非应用显示地启用Receiver,否则将不被调用。
     private class ResponseReceiver : BroadcastReceiver() {
 
         override fun onReceive(context: Context, intent: Intent) {
             Toast.makeText(context, intent.getStringExtra("data"), Toast.LENGTH_SHORT).show()
         }
+
     }
 }
