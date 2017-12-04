@@ -2,7 +2,8 @@ package com.example.guofeng.training.model.service
 
 import android.app.IntentService
 import android.content.Intent
-import com.example.guofeng.training.vm.NotificationViewModel
+import android.support.v4.content.LocalBroadcastManager
+import com.example.guofeng.training.model.IntentFactory
 
 /**
  * An [IntentService] subclass for handling asynchronous task requests in
@@ -14,13 +15,12 @@ import com.example.guofeng.training.vm.NotificationViewModel
  */
 class BroadcastIntentService : IntentService("BroadcastIntentService") {
 
-    var model: NotificationViewModel? = null
 
     override fun onHandleIntent(intent: Intent?) {
-        if (intent != null && model == null) {
-            model = NotificationViewModel()
-            model?.createProgressNotification(null)
-        }
+        val broadcastIntent = Intent()
+        broadcastIntent.action = IntentFactory.createLocalBroadcastIntentFilter(this).getAction(0)
+        broadcastIntent.putExtra("data", "task finished")
+        LocalBroadcastManager.getInstance(this).sendBroadcast(broadcastIntent)
     }
 
 }

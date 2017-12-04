@@ -2,6 +2,7 @@ package com.example.guofeng.training.model
 
 import android.content.Context
 import android.content.Intent
+import android.content.IntentFilter
 import com.example.guofeng.training.view.ui.*
 
 /**
@@ -26,5 +27,11 @@ object IntentFactory {
                 Intent(context, EditTextActivity::class.java),
                 Intent(context, IntentServiceActivity::class.java)
         )
+    }
+
+    private val LOCAL_BROADCAST_INTENT_FILTER = "local"
+
+    fun createLocalBroadcastIntentFilter(context: Context): IntentFilter {
+        return IntentFilter(LOCAL_BROADCAST_INTENT_FILTER)
     }
 }
