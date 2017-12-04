@@ -101,7 +101,7 @@
             android:name=".model.service.BroadcastIntentService"
             android:exported="false" />
 
-        <activity android:name=".view.ui.CursorLoaderActivity"></activity>
+        <activity android:name=".view.ui.CursorLoaderActivity" />
     </application>
 
 </manifest>
