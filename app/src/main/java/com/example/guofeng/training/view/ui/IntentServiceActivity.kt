@@ -27,7 +27,7 @@ class IntentServiceActivity : BaseActivity() {
         super.onResume()
         LocalBroadcastManager.getInstance(this).registerReceiver(
                 responseReceiver,
-                IntentFactory.createLocalBroadcastIntentFilter(this))
+                IntentFactory.createLocalBroadcastIntentFilter())
     }
 
     override fun onPause() {

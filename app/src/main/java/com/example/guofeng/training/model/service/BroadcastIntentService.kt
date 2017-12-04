@@ -18,7 +18,7 @@ class BroadcastIntentService : IntentService("BroadcastIntentService") {
 
     override fun onHandleIntent(intent: Intent?) {
         val broadcastIntent = Intent()
-        broadcastIntent.action = IntentFactory.createLocalBroadcastIntentFilter(this).getAction(0)
+        broadcastIntent.action = IntentFactory.createLocalBroadcastIntentFilter().getAction(0)
         broadcastIntent.putExtra("data", "task finished")
         LocalBroadcastManager.getInstance(this).sendBroadcast(broadcastIntent)
     }

@@ -3,4 +3,5 @@
     <item name="notification_channel_id" type="id" />
     <item name="notification_big_view_channel_id" type="id" />
     <item name="notification_progress_view_channel_id" type="id" />
+    <item name="loader_local_cursor" type="id" />
 </resources>

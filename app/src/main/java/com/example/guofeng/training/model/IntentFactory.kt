@@ -31,7 +31,7 @@ object IntentFactory {
 
     private val LOCAL_BROADCAST_INTENT_FILTER = "local"
 
-    fun createLocalBroadcastIntentFilter(context: Context): IntentFilter {
+    fun createLocalBroadcastIntentFilter(): IntentFilter {
         return IntentFilter(LOCAL_BROADCAST_INTENT_FILTER)
     }
 }
