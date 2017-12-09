@@ -137,4 +137,5 @@
     <string name="title_activity_basic">BasicActivity</string>
     <string name="apply_color">应用提取色彩</string>
     <string name="object_animator">ObjectAnimator</string>
+    <string name="memory">Memory</string>
 </resources>

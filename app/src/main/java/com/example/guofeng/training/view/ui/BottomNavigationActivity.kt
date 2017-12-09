@@ -1,5 +1,7 @@
 package com.example.guofeng.training.view.ui
 
+import android.app.ActivityManager
+import android.content.Context
 import android.os.Bundle
 import android.support.v4.app.NavUtils
 import com.example.guofeng.training.R
@@ -30,6 +32,13 @@ class BottomNavigationActivity : BaseActivity() {
                 }
                 R.id.navigation_notifications -> {
                     message.setText(R.string.title_notifications)
+                }
+                R.id.navigation_memory -> {
+                    val activityManager = getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
+                    val memoryInfo = ActivityManager.MemoryInfo()
+                    activityManager.getMemoryInfo(memoryInfo)
+                    val size = memoryInfo.availMem / 1024 / 1024
+                    message.text = String.format("%dM", size)
                 }
             }
             return@setOnNavigationItemSelectedListener true
