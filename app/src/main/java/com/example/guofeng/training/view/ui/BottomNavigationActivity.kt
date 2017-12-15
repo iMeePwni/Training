@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.support.v4.app.NavUtils
 import com.example.guofeng.training.R
 import com.example.guofeng.training.app.BaseActivity
+import io.fogcloud.sdk.easylink.api.EasyLink
 import kotlinx.android.synthetic.main.activity_bottom_navigation.*
 
 class BottomNavigationActivity : BaseActivity() {
@@ -43,5 +44,7 @@ class BottomNavigationActivity : BaseActivity() {
             }
             return@setOnNavigationItemSelectedListener true
         }
+
+        EasyLink(this).isAvailable
     }
 }

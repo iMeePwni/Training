@@ -31,6 +31,12 @@ android {
     }
 }
 
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
@@ -43,6 +49,7 @@ dependencies {
     implementation 'io.reactivex.rxjava2:rxjava:2.1.6'
     implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
     implementation 'com.squareup.picasso:picasso:2.5.2'
+    implementation (name:'easylinkv3-0.1.9', ext:'aar')
     releaseCompile "com.squareup.leakcanary:leakcanary-android-no-op:$leakcanary_version"
     debugCompile "com.squareup.leakcanary:leakcanary-android:$leakcanary_version"
     testImplementation 'junit:junit:4.12'
